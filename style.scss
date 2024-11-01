@@ -68,10 +68,11 @@ button {
             width: 100%;
 
             & li {
-
                 & a {
-                    
                     text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
         }
@@ -86,9 +87,13 @@ button {
 .landing {
     position: absolute;
 
+
     background-image: url('images/bmcc-night.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
     width: 100%;
-    aspect-ratio: 1;
+    // aspect-ratio: 1;
+
 
     display: flex;
     align-items: center;

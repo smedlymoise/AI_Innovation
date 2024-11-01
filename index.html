@@ -40,7 +40,7 @@
 
     </nav>
 
-    <!---
+ 
     <div class="landing">
         <h1 class="landing__header"> Welcome to BMCC Student Hub </h1>
         <p class="landing__paragraph"> At Borough of Manhattan Community College, we empower students with resources, a navigable campus map, and
@@ -56,20 +56,37 @@
         </div>
     </div>
 
-    -->
-    <!--- This div imports the club directory file from Google Spreadsheets using the SheetsDB API-->
-    <div class="proof-of-concept">
-        <!-- <script src="https://sheetdb.io/s/t/00dheji2trlxt.js"></script> -->
+    <!--- This div imports the club directory file from Google Spreadsheets using the SheetsDB API -->
+    <!--- With JavaScript, I'm hoping we can create some pagination using the data-sheetdb-limit parameter to limit rows and
+            data-sheetdb-offset 
+            
+            window.addEventListener("sheetdb-downloaded", function() {
+                // this code will be executed after all sheetdb data has been retrieved
+            });
 
-        <h1> Club Directory </h1>
+            In parent div, please add: data-sheetdb-save="my-saved-data-1"
+
+            Then child div should...
+            <div data-sheetdb-slot="my-saved-data-1">
+                <p>Age: {{age}}</p>
+            </div>
+    -->
+    <div class="proof-of-concept">
+        <h1> BMCC Club Directory </h1>
         <div data-sheetdb-url="https://sheetdb.io/api/v1/e36vimrfh30cg"
-            data-sheetdb-sort-by="age"
-            data-sheetdb-sort-order="asc"
-            data-sheetdb-search="id[]=1&id[]=2"
-            data-sheetdb-search-mode="or">
-            <p>ID: {{id}} - {{name}} ({{age}})</p>
+            data-sheetdb-sort-by="club name"
+            data-sheetdb-sort-order="asc">
+            <p>{{Club Name}} </p>
         </div>
 
+        <!-- 
+            Additional parameters 
+                Club Email
+                Club Room
+                Club Days/Time Club Meets
+                Zoom Links
+                Club Advisor Name 
+        -->
     </div>
 </body>
 </html>
