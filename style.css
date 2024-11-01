@@ -1,0 +1,88 @@
+/*/ Root placeholder /*/
+:root {
+  --primary-color: black;
+  --secondary-color: white;
+  /* tertiary color candidates 
+  color: 
+      burlywood; 
+      goldenrod;
+      skyblue;
+  */
+  --landing-background: url("mt-fuji-ii.jpg");
+  --primary-font: "allrounder-monument-regular", "Times New Roman", Times, serif;
+  --primary-font--heavy: "allrounder-monument-heavy", "Times New Roman", Times, serif;
+  --primary-font--light: "allrounder-monument", "Times New Roman", Times, serif;
+  --secondary-font: "Times New Roman", Times, serif;
+  --tertiary-font: "Montserrat", sans-serif;
+  --global-margin: 5%;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+button {
+  border: none;
+  background: transparent;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  background: white;
+  color: navy;
+}
+.navbar__logo {
+  display: flex;
+}
+.navbar__logo a img {
+  width: 10vw;
+}
+.navbar__wrapper {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+.navbar__wrapper__links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  width: 100%;
+}
+.navbar__wrapper__links li a {
+  text-decoration: none;
+}
+.navbar__btn {
+  border: 1px solid navy;
+  border-radius: 10% 50%;
+}
+
+.landing {
+  position: absolute;
+  background-image: url("images/bmcc-night.jpg");
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.landing__header {
+  position: relative;
+  color: white;
+}
+.landing__paragraph {
+  width: 35%;
+  color: white;
+}
+.landing__cta__btn {
+  background: black;
+  color: white;
+}
+.landing__cta__btn:hover {
+  background: white;
+  color: black;
+}
+
+/*# sourceMappingURL=style.css.map */

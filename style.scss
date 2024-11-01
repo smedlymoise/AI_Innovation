@@ -1,0 +1,122 @@
+/*/ Root placeholder /*/
+:root {
+    --primary-color: black;
+    --secondary-color: white;
+    /* tertiary color candidates 
+    color: 
+        burlywood; 
+        goldenrod;
+        skyblue;
+    */
+
+    --landing-background: url("mt-fuji-ii.jpg");
+
+    --primary-font: "allrounder-monument-regular", "Times New Roman", Times, serif;
+    --primary-font--heavy: "allrounder-monument-heavy", "Times New Roman", Times, serif;
+    --primary-font--light: "allrounder-monument", "Times New Roman", Times, serif;
+    --secondary-font: "Times New Roman", Times, serif;
+    --tertiary-font: "Montserrat", sans-serif;
+
+    --global-margin: 5%;
+}
+
+// Prevents overflow/side-scrolling
+body {
+    overflow-x: hidden !important;
+
+}
+
+// A sin in CSS, but I have to learn SASS better later, this resets ALL button's default styling for easy config later on 
+button {
+    border: none;
+    background: transparent;
+}
+
+.navbar {
+
+    display: flex;
+    justify-content: center;
+
+    background: white;
+    color: navy;
+
+
+    &__logo {
+        display: flex;
+        & a {
+            
+            & img {
+                width: 10vw;
+            }
+        }
+    }
+
+    &__wrapper {
+
+        display: flex;
+        justify-content: center;
+
+        width: 50%;
+
+        &__links {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            list-style: none;
+
+            width: 100%;
+
+            & li {
+
+                & a {
+                    
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        border: 1px solid navy;
+        border-radius: 10% 50%;
+    }
+}
+
+.landing {
+    position: absolute;
+
+    background-image: url('images/bmcc-night.jpg');
+    width: 100%;
+    aspect-ratio: 1;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+
+    &__header {
+        position: relative;
+
+        color: white;
+    }
+
+    &__paragraph {
+
+        width: 35%;
+        color: white;
+    }
+
+    &__cta {
+        &__btn {
+            background: black;
+            color: white;
+
+            &:hover {
+                background: white;
+                color: black;
+            }
+        }
+    }
+}

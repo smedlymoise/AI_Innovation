@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> BMCC | Student Hub </title>
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Student Hub" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta name="team" content="Smedly, Alyssa, Jannatul & Oswaldo">
+    <meta name="description" content="An entry for the BMCC AI Innovation Challenge for Social Good Fall 2024">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://sheetdb.io/handlebars.js"></script> <!-- Used for importing table data -->
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <a href="index.html" alt="BMCC Student Hub">
+                <img src="BMCC-Student-Hub.png">
+            </a>
+        </div>
+
+        <div class="navbar__wrapper">
+            <ul class="navbar__wrapper__links">
+                <li><a href="about.html"> About </a></li>
+                <li><a href="about.html"> Campus Map </a></li>
+                <li><a href="about.html"> Study Groups </a></li>
+            </ul>
+        </div>
+
+        <button type="button" class="navbar__btn" onclick="window.alert('No code yet');"> Login </button>
+        <button type="button" class="navbar__btn" onclick="window.alert('No code yet');"> Sign up </button>
+
+    </nav>
+
+    <!---
+    <div class="landing">
+        <h1 class="landing__header"> Welcome to BMCC Student Hub </h1>
+        <p class="landing__paragraph"> At Borough of Manhattan Community College, we empower students with resources, a navigable campus map, and
+            a supportive community. Join us to enhance your academic journey and connect with fellow students.
+        </p>
+        <div class="landing__cta">
+            <button type="button" class="landing__cta__btn" onclick="window.alert('No code yet');">
+                <p> Sign up </p>
+            </button>
+            <button type="button" class="landing__cta__btn" onclick="window.alert('No code yet');">
+                <p> Sign up </p>
+            </button>
+        </div>
+    </div>
+
+    -->
+    <!--- This div imports the club directory file from Google Spreadsheets using the SheetsDB API-->
+    <div class="proof-of-concept">
+        <!-- <script src="https://sheetdb.io/s/t/00dheji2trlxt.js"></script> -->
+
+        <h1> Club Directory </h1>
+        <div data-sheetdb-url="https://sheetdb.io/api/v1/e36vimrfh30cg"
+            data-sheetdb-sort-by="age"
+            data-sheetdb-sort-order="asc"
+            data-sheetdb-search="id[]=1&id[]=2"
+            data-sheetdb-search-mode="or">
+            <p>ID: {{id}} - {{name}} ({{age}})</p>
+        </div>
+
+    </div>
+</body>
+</html>
