@@ -14,29 +14,55 @@
 
     <meta name="team" content="Smedly, Alyssa, Jannatul & Oswaldo">
     <meta name="description" content="An entry for the BMCC AI Innovation Challenge for Social Good Fall 2024">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
 
     <link rel="stylesheet" href="style.css">
 
     <script src="https://sheetdb.io/handlebars.js"></script> <!-- Used for importing table data -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
+
+    <div class="float-btn challenge-btn">
+        <a href="https://www.bmcc.cuny.edu/event/ai-innovation-challenge-for-social-good-day-1/" target="_blank" rel="noopener">
+            <i class="fas fa-trophy"></i>
+            <span>View Challenge Details</span>
+        </a>
+    </div>
+
+    <div class="float-btn ai-btn">
+        <a href="#" target="_blank">
+            <i class="fas fa-hat-wizard"></i>
+        </a>
+    </div>
+
     <nav class="navbar">
         <div class="navbar__logo">
             <a href="index.html" alt="BMCC Student Hub">
-                <img src="BMCC-Student-Hub.png">
+                <img src="BMCC-Student-Hub.png" alt="BMCC Student Hub">
             </a>
         </div>
 
         <div class="navbar__wrapper">
             <ul class="navbar__wrapper__links">
                 <li><a href="about.html"> About </a></li>
-                <li><a href="about.html"> Campus Map </a></li>
-                <li><a href="about.html"> Study Groups </a></li>
+                <li><a href="map.html"> Campus Map </a></li>
+                <li><a href="dashboard.html"> Student Resources </a></li>
+                <li><a href="match.html"> Study Match </a></li>
             </ul>
         </div>
 
-        <button type="button" class="navbar__btn" onclick="window.alert('No code yet');"> Login </button>
+
+        <button type="button" class="navbar__btn" onclick="window.alert('No code yet');"> <a href="dashboard.html"> Login </a> </button>
         <button type="button" class="navbar__btn" onclick="window.alert('No code yet');"> Sign up </button>
+        <button type="button" class="navbar__btn" onclick="changeTheme();"> <i class="fas fa-moon"></i> </button>
 
     </nav>
 
@@ -48,7 +74,7 @@
         </p>
         <div class="landing__cta">
             <button type="button" class="landing__cta__btn" onclick="window.alert('No code yet');">
-                <p> Sign up </p>
+                <p> <a href="dashboard.html"> Login </a> </p>
             </button>
             <button type="button" class="landing__cta__btn" onclick="window.alert('No code yet');">
                 <p> Sign up </p>
@@ -56,37 +82,144 @@
         </div>
     </div>
 
-    <!--- This div imports the club directory file from Google Spreadsheets using the SheetsDB API -->
-    <!--- With JavaScript, I'm hoping we can create some pagination using the data-sheetdb-limit parameter to limit rows and
-            data-sheetdb-offset 
-            
-            window.addEventListener("sheetdb-downloaded", function() {
-                // this code will be executed after all sheetdb data has been retrieved
-            });
-
-            In parent div, please add: data-sheetdb-save="my-saved-data-1"
-
-            Then child div should...
-            <div data-sheetdb-slot="my-saved-data-1">
-                <p>Age: {{age}}</p>
-            </div>
-    -->
-    <div class="proof-of-concept">
-        <h1> BMCC Club Directory </h1>
-        <div data-sheetdb-url="https://sheetdb.io/api/v1/e36vimrfh30cg"
-            data-sheetdb-sort-by="club name"
-            data-sheetdb-sort-order="asc">
-            <p>{{Club Name}} </p>
+    <div class="card">
+        <div class="card__header">
+            <h2> Connect </h2>
+            <h1> Explore our Essential Student Resources </h1>
+            <p> Our platform is designed to enhance your college experience. Discover tools that simplify your academic journey and foster connections.</p>
         </div>
 
-        <!-- 
-            Additional parameters 
-                Club Email
-                Club Room
-                Club Days/Time Club Meets
-                Zoom Links
-                Club Advisor Name 
-        -->
+        <div class="card__compare-div">
+            <div class="card__compare-div__block">
+                <i class="fas fa-map-location-dot"></i>
+                <h1> Navigate your Campus with Ease </h1>
+                <p> Our interactive campus map helps you find your way to higher education </p>
+            </div>
+            <div class="card__compare-div__block">
+                <i class="fas fa-users"></i>
+                <h1> Find Your Perfect Study Group </h1>
+                <p> Our inhouse AI helps you matchmake with BMCC students based on learning styles, courses, interests and more! </p>
+            </div>
+            <div class="card__compare-div__block">
+                <i class="fas fa-graduation-cap"></i>
+                <h1> Access Valuable Academic Resources </h1>
+                <p> Explore a wealth of resources tailored for students </p>
+            </div>
+        </div>
     </div>
+
+    <div class="card">
+        <div class="card__compare-div">
+            <div class="card__header">
+                <h2> BMCC MapQuest II </h2>
+                <h1> Making running to class five minutes late, ten minutes faster. </h1>
+                <p> Select your campus for a campus map of the building complete with modern technology and directions in natural language generated by AI. </p>
+            </div>
+            <div class="card__compare-div__block">
+                <img src="images/campus/chambers-campus-v2-framed.png">
+                <h1> Chambers </h1>
+                <p> The main campus building of BMCC, whose architecture is designed off of a pirate ship! Ever think about that? </p>
+            </div>
+            <div class="card__compare-div__block">
+                <img src="images/campus/fiterman-campus-framed.png">
+                <h1> Fiterman Campus </h1>
+                <p> Arguably the best campus building and a sign of tenacity and healing for New York </p>
+            </div>
+            <div class="card__compare-div__block">
+                <img src="images/campus/murray-campus-framed.png">
+                <h1> Murray Campus </h1>
+                <p> The sister building of Fiterman with a strong finance-esque atmosphere compared to the rest </p>
+            </div>
+            <div class="card__compare-div__block">
+                <img src="images/campus/cuny-in-the-heights-campus-framed.png">
+                <h1> CUNY In the Heights </h1>
+                <p> Expanding accessibility for higher education to the rest of New York City </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="team card">
+        <div class="team__header">
+            <h2> Meet </h2>
+            <h1> Our team : "Team" </h1>
+            <p> Dedicated professionals to an AI/student led future. </p>
+        </div>
+        <div class="team__list">
+            <div class="team__list__member">
+                <h1> Smedly </h1>
+                <h2> Backend </h2>
+                <p> sigma skibidi ohio rizznation brainrot placeholder daniel </p>
+
+                <div class="team__list__member__social">
+                    <a href="#"> <i class="fab fa-linkedin"> </i> </a>
+                    <a href="#"> <i class="fab fa-github"> </i> </a>
+                    <a href="#"> <i class="fab fa-envelope"> </i> </a>
+                </div>
+            </div>
+ 
+            <div class="team__list__member">
+                <h1> Alyssa </h1>
+                <h2> Data </h2>
+                <p> sigma skibidi ohio rizznation brainrot placeholder daniel </p>
+
+                <div class="team__list__member__social">
+                    <a href="#"> <i class="fab fa-linkedin"> </i> </a>
+                    <a href="#"> <i class="fab fa-github"> </i> </a>
+                    <a href="#"> <i class="fab fa-envelope"> </i> </a>
+                </div>
+            </div>
+
+            <div class="team__list__member">
+                <h1> Jannatul </h1>
+                <h2> Data </h2>
+                <p> sigma skibidi ohio rizznation brainrot placeholder daniel </p>
+
+                <div class="team__list__member__social">
+                    <a href="#"> <i class="fab fa-linkedin"> </i> </a>
+                    <a href="#"> <i class="fab fa-github"> </i> </a>
+                    <a href="#"> <i class="fab fa-envelope"> </i> </a>
+                </div>
+            </div>
+
+            <div class="team__list__member">
+                <h1> Oswaldo </h1>
+                <h2> Frontend </h2>
+                <p> sigma skibidi ohio rizznation brainrot placeholder daniel </p>
+
+                <div class="team__list__member__social">
+                    <a href="#"> <i class="fab fa-linkedin"> </i> </a>
+                    <a href="#"> <i class="fab fa-github"> </i> </a>
+                    <a href="#"> <i class="fab fa-envelope"> </i> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer"> 
+        <div class="footer__nav">
+            <div class="footer__nav__header">
+                <img src="BMCC-Student-Hub.png" alt="BMCC Student Hub">
+            </div>
+            <ul class="footer__nav__links">
+                <li><a href="about.html"> About </a></li>
+                <li><a href="about.html"> Campus Map </a></li>
+                <li><a href="about.html"> Study Groups </a></li>
+            </ul>
+        </div>
+
+        <div class="footer__end">
+            <div class="footer__end__copyright">
+                <p> &copy; 2024 Student Hub. All rights reserved.  </p>
+            </div>
+
+            <div class="footer__end__links">
+                <p> Privacy Policy </p>
+                <p> Terms of Service </p>
+                <p> <a href="mailto:ofdelossantosa@gmail.com"> Contact us </a> </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

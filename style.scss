@@ -1,13 +1,18 @@
 /*/ Root placeholder /*/
 :root {
-    --primary-color: black;
-    --secondary-color: white;
+    // --primary-color: black;
+    // --secondary-color: white;
     /* tertiary color candidates 
     color: 
         burlywood; 
         goldenrod;
         skyblue;
     */
+
+    --primary-color: white; // Text
+    --secondary-color: navy; // Background
+
+    --logo: url("BMCC-Student-Hub.png")
 
     --landing-background: url("mt-fuji-ii.jpg");
 
@@ -24,6 +29,11 @@
 body {
     overflow-x: hidden !important;
 
+
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
 }
 
 // A sin in CSS, but I have to learn SASS better later, this resets ALL button's default styling for easy config later on 
@@ -32,13 +42,46 @@ button {
     background: transparent;
 }
 
+.float-btn {
+    position: fixed;
+    top: 90%;
+
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: fit-content;  
+
+    & a {
+        color: var(--primary-color);
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.challenge-btn {
+    left: 10%;
+}
+
+.ai-btn {
+    left: 90%;
+    border-radius: 50%;
+    font-size: xx-large;
+}
+
 .navbar {
 
     display: flex;
     justify-content: center;
+    align-items: center;
 
-    background: white;
-    color: navy;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+
+    margin-bottom: 10px;
 
 
     &__logo {
@@ -69,6 +112,7 @@ button {
 
             & li {
                 & a {
+                    color: var(--secondary-color);
                     text-decoration: none;
                     &:hover {
                         text-decoration: underline;
@@ -80,12 +124,17 @@ button {
 
     &__btn {
         border: 1px solid navy;
-        border-radius: 10% 50%;
+        border-radius: 12px;
+        height: 50%;
+
+        &:hover {
+            background: navy;
+            color: white;
+        }
     }
 }
 
 .landing {
-    position: absolute;
 
 
     background-image: url('images/bmcc-night.jpg');
@@ -95,11 +144,13 @@ button {
     // aspect-ratio: 1;
 
 
+
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
 
+    padding: 10px;
 
     &__header {
         position: relative;
@@ -113,14 +164,315 @@ button {
         color: white;
     }
 
+    &__header, &__paragraph {
+        padding: 25px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
     &__cta {
         &__btn {
-            background: black;
-            color: white;
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            width: 250px;
+
+            & a {
+                text-decoration: none;
+
+                
+            }
 
             &:hover {
-                background: white;
-                color: black;
+                background: var(--secondary-color);
+                color: var(--primary-color);
+
+                & a {
+                    color: var(--primary-color);
+                    
+                }
+            }
+        }
+    }
+}
+
+.card {
+
+    background: var(--primary-color);
+    color: var(--secondary-color);
+
+    margin: 20px;
+
+    &__compare-div {
+        display: flex;
+        margin: 5em 0;
+
+        &__block {
+            width: 33%;
+            padding: 1em;
+
+            & img {
+                width: 90%;
+            }
+            & i {
+                font-size: 5em;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+
+.phone {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+
+    &__item {
+        margin: auto;
+        margin-top: 170px;
+        width: 350px;
+        height: 600px;
+        box-shadow: 0 0 10px black;
+        border-radius: 30px;
+        border: 5px solid white;
+
+        &__frame {
+            width: 150px;
+            height: 20px;
+            background: white;
+            position: absolute;
+            margin: 0 100px;
+            border-radius: 0 0 20px 20px;
+            &__speaker {
+                width: 60px;
+                height: 5px;
+                background: #d2d2d2;
+                display: block;
+                margin: auto;
+                margin-top: 5px;
+                border-radius: 20px;
+            }
+        }
+        
+        &__screen {
+            width: 100%;
+            height: 100%;
+
+            background: transparent;
+            border-radius: 30px;
+            overflow-y: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &__text {
+                color: red;
+                h2 {}
+                p {}
+            }
+        }
+    }
+}
+
+
+.club {
+    &__list {
+        &__dynamic {
+            display: flex;
+            align-items: center;
+            flex-flow: wrap row;
+            justify-content: space-between;
+            
+
+            &__header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & span {
+                    display: flex;
+                    justify-content: flex-end;
+
+                    & a {
+                        margin-left: 10px;
+                    }
+                }
+                
+            }
+
+            &__item {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+            }
+        }
+    }
+}
+
+.team {
+    padding: 2em;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__list {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+
+        &__member {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+
+            &__social {
+                font-size: larger;
+
+                & a {
+                    text-decoration: none;
+
+                    &:hover {
+                        color: var(--secondary-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    font-size: smaller;
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        width: 75%;
+
+        &__header {
+            display: flex;
+            justify-content: center;
+            margin: 1em;
+
+            & img {
+                width: 10vw;
+            }
+        }
+        &__links {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            & li {
+                & a {
+                    color: var(--secondary-color);
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    &__end {
+        display: flex;
+        justify-content: space-around;
+        
+        width: 90%;
+        border-top: 1px solid var(--secondary-color);
+        padding: 1em;
+
+
+        &__copyright {
+
+        }
+        &__links {
+            display: flex;
+            justify-content: space-between;
+            width: 30%;
+
+            & a {
+                color: var(--secondary-color);
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            
+        }
+    }
+}
+
+
+
+
+
+
+
+.dashboard {
+    display: flex;
+    flex-flow: column nowrap;
+    
+    border: 2px solid red;
+
+    &__header {
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 20px;
+
+        background: var(--secondary-color);
+        color: var(--primary-color);
+    }
+
+    &__content {
+        display: flex;
+        &__sidebar {
+            display: flex;
+            flex-flow: column nowrap;
+            width: 20%;
+
+            &__item {
+                background: var(--secondary-color);
+                color: var(--primary-color);
+
+                display: flex;
+                align-items: center;
+                padding: 16px;
+
+                &:hover {
+                    background: darkblue;
+                    color: var(--primary-color);
+                }
+            }
+            &__item--special {
+                background: orange;
+                color: var(--primary-color);
+            }
+        }
+        &__main {
+            color: red;
+
+            &__map {
+                & img {
+                    width: 100%;
+
+                }
             }
         }
     }

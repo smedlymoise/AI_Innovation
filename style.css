@@ -1,13 +1,14 @@
 /*/ Root placeholder /*/
 :root {
-  --primary-color: black;
-  --secondary-color: white;
   /* tertiary color candidates 
   color: 
       burlywood; 
       goldenrod;
       skyblue;
   */
+  --primary-color: white;
+  --secondary-color: navy;
+  --logo: url("BMCC-Student-Hub.png")
   --landing-background: url("mt-fuji-ii.jpg");
   --primary-font: "allrounder-monument-regular", "Times New Roman", Times, serif;
   --primary-font--heavy: "allrounder-monument-heavy", "Times New Roman", Times, serif;
@@ -19,6 +20,10 @@
 
 body {
   overflow-x: hidden !important;
+  font-family: "Libre Franklin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
 }
 
 button {
@@ -26,11 +31,40 @@ button {
   background: transparent;
 }
 
+.float-btn {
+  position: fixed;
+  top: 90%;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: fit-content;
+}
+.float-btn a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.float-btn a:hover {
+  text-decoration: underline;
+}
+
+.challenge-btn {
+  left: 10%;
+}
+
+.ai-btn {
+  left: 90%;
+  border-radius: 50%;
+  font-size: xx-large;
+}
+
 .navbar {
   display: flex;
   justify-content: center;
-  background: white;
-  color: navy;
+  align-items: center;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  margin-bottom: 10px;
 }
 .navbar__logo {
   display: flex;
@@ -51,22 +85,32 @@ button {
   width: 100%;
 }
 .navbar__wrapper__links li a {
+  color: var(--secondary-color);
   text-decoration: none;
+}
+.navbar__wrapper__links li a:hover {
+  text-decoration: underline;
 }
 .navbar__btn {
   border: 1px solid navy;
-  border-radius: 10% 50%;
+  border-radius: 12px;
+  height: 50%;
+}
+.navbar__btn:hover {
+  background: navy;
+  color: white;
 }
 
 .landing {
-  position: absolute;
   background-image: url("images/bmcc-night.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
-  aspect-ratio: 1;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  padding: 10px;
 }
 .landing__header {
   position: relative;
@@ -76,13 +120,242 @@ button {
   width: 35%;
   color: white;
 }
+.landing__header, .landing__paragraph {
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.1);
+}
 .landing__cta__btn {
-  background: black;
-  color: white;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  width: 250px;
+}
+.landing__cta__btn a {
+  text-decoration: none;
 }
 .landing__cta__btn:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+.landing__cta__btn:hover a {
+  color: var(--primary-color);
+}
+
+.card {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  margin: 20px;
+}
+.card__compare-div {
+  display: flex;
+  margin: 5em 0;
+}
+.card__compare-div__block {
+  width: 33%;
+  padding: 1em;
+}
+.card__compare-div__block img {
+  width: 90%;
+}
+.card__compare-div__block i {
+  font-size: 5em;
+  margin: 0 auto;
+}
+
+.phone {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+.phone__item {
+  margin: auto;
+  margin-top: 170px;
+  width: 350px;
+  height: 600px;
+  box-shadow: 0 0 10px black;
+  border-radius: 30px;
+  border: 5px solid white;
+}
+.phone__item__frame {
+  width: 150px;
+  height: 20px;
   background: white;
-  color: black;
+  position: absolute;
+  margin: 0 100px;
+  border-radius: 0 0 20px 20px;
+}
+.phone__item__frame__speaker {
+  width: 60px;
+  height: 5px;
+  background: #d2d2d2;
+  display: block;
+  margin: auto;
+  margin-top: 5px;
+  border-radius: 20px;
+}
+.phone__item__screen {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: 30px;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phone__item__screen__text {
+  color: red;
+}
+.club__list__dynamic {
+  display: flex;
+  align-items: center;
+  flex-flow: wrap row;
+  justify-content: space-between;
+}
+.club__list__dynamic__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.club__list__dynamic__header span {
+  display: flex;
+  justify-content: flex-end;
+}
+.club__list__dynamic__header span a {
+  margin-left: 10px;
+}
+.club__list__dynamic__item {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.team {
+  padding: 2em;
+}
+.team__header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.team__list {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+.team__list__member {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+.team__list__member__social {
+  font-size: larger;
+}
+.team__list__member__social a {
+  text-decoration: none;
+}
+.team__list__member__social a:hover {
+  color: var(--secondary-color);
+}
+
+.footer {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  font-size: smaller;
+}
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+}
+.footer__nav__header {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}
+.footer__nav__header img {
+  width: 10vw;
+}
+.footer__nav__links {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+.footer__nav__links li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+.footer__nav__links li a:hover {
+  text-decoration: underline;
+}
+.footer__end {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  border-top: 1px solid var(--secondary-color);
+  padding: 1em;
+}
+.footer__end__links {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+.footer__end__links a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+.footer__end__links a:hover {
+  text-decoration: underline;
+}
+
+.dashboard {
+  display: flex;
+  flex-flow: column nowrap;
+  border: 2px solid red;
+}
+.dashboard__header {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 20px;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+.dashboard__content {
+  display: flex;
+}
+.dashboard__content__sidebar {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 20%;
+}
+.dashboard__content__sidebar__item {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+.dashboard__content__sidebar__item:hover {
+  background: darkblue;
+  color: var(--primary-color);
+}
+.dashboard__content__sidebar__item--special {
+  background: orange;
+  color: var(--primary-color);
+}
+.dashboard__content__main {
+  color: red;
+}
+.dashboard__content__main__map img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

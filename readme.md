@@ -1,3 +1,5 @@
-# Hi
+# Club List
 
-This is just a test to see if I understand Github right
+Be sure to enable READ permissions for the database or else the club list wouldn't work properly
+
+<https://sheetdb.io/app/apis/e36vimrfh30cg/settings>
