@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> BMCC | Student Hub </title>
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Student Hub" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta name="team" content="Smedly, Alyssa, Jannatul & Oswaldo">
+    <meta name="description" content="An entry for the BMCC AI Innovation Challenge for Social Good Fall 2024">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://sheetdb.io/handlebars.js"></script> <!-- Used for importing table data -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+
+    <div class="float-btn challenge-btn">
+        <a href="https://www.bmcc.cuny.edu/event/ai-innovation-challenge-for-social-good-day-1/" target="_blank" rel="noopener">
+            <i class="fas fa-trophy"></i>
+            <span>View Challenge Details</span>
+        </a>
+    </div>
+
+    <div class="float-btn ai-btn">
+        <a href="#" target="_blank">
+            <i class="fas fa-hat-wizard"></i>
+        </a>
+    </div>
+
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <a href="index.html" alt="BMCC Student Hub">
+                <img src="BMCC-Student-Hub.png" alt="BMCC Student Hub">
+            </a>
+        </div>
+
+        <div class="navbar__wrapper">
+            <ul class="navbar__wrapper__links">
+                <li><a href="about.html"> About </a></li>
+                <li><a href="map.html"> Campus Map </a></li>
+                <li><a href="dashboard.html"> Student Resources </a></li>
+                <li><a href="match.html"> Study Match </a></li>
+            </ul>
+        </div>
+
+
+        <button type="button" class="navbar__btn" onclick="window.alert('No code yet');"> <a href="dashboard.html"> Login </a> </button>
+        <button type="button" class="navbar__btn" onclick="window.alert('No code yet');"> Sign up </button>
+        <button type="button" class="navbar__btn" onclick="changeTheme();"> <i class="fas fa-moon"></i> </button>
+
+    </nav>
+
+    <div class="club card">
+        <div class="club__header">
+            <h2> Explore </h2>
+            <h1> Our Community Clubs </h1>
+            <p> Join our diverse clubs to enhance your academic journey and connect with fellow students. </p>
+        </div>
+
+        <div class="club__search">
+            <input type="text" id="clubSearchInput" placeholder="Search for a club">
+            <button type="button" onclick="searchClubs()">Search</button>
+            <button type="button" onclick="searchClubs()"> Try with AI <i class="fas fa-hat-wizard"></i></button>
+        </div>
+
+        <div class="club__list">
+            <div class="club__list__dynamic"
+                data-sheetdb-url="https://sheetdb.io/api/v1/e36vimrfh30cg"
+                data-sheetdb-sort-by="club name"
+                data-sheetdb-sort-order="asc"
+                data-sheetdb-save="club-list-data">
+
+                <div class="club__list__dynamic__item">
+                    <div class="club__list__dynamic__header">
+                        <!-- CSS doesn't seem to apply -->
+                        <h1> {{Club Name}}  </h1> <span> &#x2022; {{Club Advisor Name}} <a href="mailto:{{Club Email}}"> <i class="fa fa-envelope"></i> </a> </span>
+                        <!-- <span> <a href="mailto:{{Club Email}}"> <i class="fa fa-envelope"></i> </a> </span> -->
+                        
+                        <!--
+                        <span class="zoom-link"> 
+                            <a href="{{Zoom Links}}"> <i class="fas fa-video"></i> </a> 
+                        </span>
+                        -->
+                       
+                    </div>
+                    <div class="club__list__dynamic__dynamic__description">
+                        {{Days/Time Club Meets}} at {{Club Room}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // 11/1 2:53pm 
+            // This function doesn't work, for some reason all url's return as {{Zoom Links}} 
+            // rather than the actual values they're supposed to represent.
+            document.addEventListener("DOMContentLoaded", function() {
+                // Select all zoom link spans
+                const zoomLinks = document.querySelectorAll(".club__list__dynamic__item .zoom-link a");
+
+                let invalidLink = 0;
+                zoomLinks.forEach(link => {
+                    // Check if the href attribute is empty, null, or contains "none"
+                    const url = link.getAttribute("href");
+                    console.log(url);
+                    if (!url || url.trim() === "" || url === "{{Zoom Links}}" || url === null) {
+                        invalidLink++; 
+                        console.log(link.parentElement.textContent);
+                        link.parentElement.style.display = "none"; // Hide the span if no Zoom link
+                    }
+                });
+
+                console.log(invalidLink);
+                console.log("End of function");
+            });
+        </script>
+    </div>
+
+    
+    <footer class="footer"> 
+        <div class="footer__nav">
+            <div class="footer__nav__header">
+                <img src="BMCC-Student-Hub.png" alt="BMCC Student Hub">
+            </div>
+            <ul class="footer__nav__links">
+                <li><a href="about.html"> About </a></li>
+                <li><a href="about.html"> Campus Map </a></li>
+                <li><a href="about.html"> Study Groups </a></li>
+            </ul>
+        </div>
+
+        <div class="footer__end">
+            <div class="footer__end__copyright">
+                <p> &copy; 2024 Student Hub. All rights reserved.  </p>
+            </div>
+
+            <div class="footer__end__links">
+                <p> Privacy Policy </p>
+                <p> Terms of Service </p>
+                <p> <a href="mailto:ofdelossantosa@gmail.com"> Contact us </a> </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

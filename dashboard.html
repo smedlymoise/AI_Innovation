@@ -40,7 +40,7 @@
                 <li><a href="about.html"> About </a></li>
                 <li><a href="map.html"> Campus Map </a></li>
                 <li><a href="dashboard.html"> Student Resources </a></li>
-                <li><a href="match.html"> Study Match </a></li>
+                <li><a href="about.html"> Study Match </a></li>
             </ul>
         </div>
 
@@ -54,37 +54,96 @@
     <div class="dashboard">
         <div class="dashboard__header">
             <h2> Student Hub Dashboard </h2>
+            <input type="text" class="dashboard__header__search" id="dashboard__header__search" placeholder="Search for classes, events, resources...">
+            <label for="dashboard__header__search">
+                <?xml version="1.0" encoding="UTF-8"?><svg width="48px" height="48px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#fcfcfc" stroke-width="1.5"><path d="M8 15C12.8747 15 15 12.949 15 8C15 12.949 17.1104 15 22 15C17.1104 15 15 17.1104 15 22C15 17.1104 12.8747 15 8 15Z" fill="#fcfcfc" stroke="#fcfcfc" stroke-width="1.5" stroke-linejoin="round"></path><path d="M2 6.5C5.13376 6.5 6.5 5.18153 6.5 2C6.5 5.18153 7.85669 6.5 11 6.5C7.85669 6.5 6.5 7.85669 6.5 11C6.5 7.85669 5.13376 6.5 2 6.5Z" fill="#fcfcfc" stroke="#fcfcfc" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+            </label>
+
+            <div class="dashboard__header__profile">
+                <img src="https://opendoorstherapy.com/wp-content/uploads/2020/02/bigstock-Sad-Student-Feeling-Insecuriti-349917781.jpg" alt="A picture of a guy!">
+            </div>
         </div>
         <div class="dashboard__content">
-            <div class="dashboard__content__sidebar">
-                <div class="dashboard__content__sidebar__item dashboard__sidebar__item--special"> 
+            <ul class="dashboard__content__sidebar">
+                <li class="dashboard__content__sidebar__item dashboard__content__sidebar__item--special"> 
                     <h3> Native American Heritage Month </h3> <i class="fas fa-feather-pointed"></i>
-                </div>
-                <div class="dashboard__content__sidebar__item"> 
+                </li>
+                
+                <li class="dashboard__content__sidebar__item"> 
                     <h3> Academic Programs and Support Services </h3> <i class="fas fa-book-bookmark"></i>
-                </div>
+                </li>
 
-                <div class="dashboard__content__sidebar__item"> 
+                <li class="dashboard__content__sidebar__item"> 
                     <h3> Registration and financial services </h3> <i class="fas fa-money-check-dollar"></i>
-                </div>
+                </li>
 
-                <div class="dashboard__content__sidebar__item"> 
+                
+                <li class="dashboard__content__sidebar__item" id="js-enabled"> 
                     <h3> Student Engagement and Leadership </h3> <i class="fas fa-signal"></i>
-                </div>
+                    <div class="dashboard__content__sidebar__item__menu" id="js-hidden">
+                        
+                        <div class="dashboard__content__sidebar__item__menu__list">
+                            <h3> Most popular <i class="fas fa-fire"></i></h3>
+                            <ul> 
+                                <li> Co-Curricular Transcript (CCT) </li>
+                                <li> <a href="club.html" style="text-decoration: none; color: white;"> Student Activites and Clubs </a> </li>
+                                <li> Student Government Association (SGA) </li>
+                                <li> Voter Registration </li>
+                            </ul>
 
-                <div class="dashboard__content__sidebar__item"> 
+                            <h3> New Student Programs </h3>
+                            <ul>
+                                <li> New Student Orientation </li>
+                                <li> Panther Partners (Mentees) </li>
+                            </ul>
+
+                            <h3> Internships and Experiential Learning </h3>
+                            <ul>
+                                <li> Experiential Learning </li>
+                                <li> Internships </li>
+                                <li> YearUp </li>
+                            </ul>
+                        </div>
+                        <div class="dashboard__content__sidebar__item__menu__list">
+                            <h3> Leadership, Involvement and Service </h3>
+                            <ul>
+                                <li> Achievers </li>
+                                <li> Asian American and Pacific Islander Bridge Initiative </li>
+                                <li> Athletics and Recreation </li>
+                                <li> BlackStone Launchpad </li>
+                                <li> Civic Leadership and Engagement </li>
+                                <li> Co-Curricular Transcript (CCT) </li>
+                                <li> Conexiones & Connections </li>
+                                <li> Federal Work Study Career Access Program </li>
+                                <li> IMPACT Peer Mentoring </li>
+                                <li> National Society of Leadership and Success </li>
+                                <li> Panther Partners</li>
+                                <li> Student Activities and Clubs </li>
+                                <li> Student Government Association (SGA) </li>
+                                <li> Student Government Elections </li>
+                                <li> The Urban Male Leadership Academy (UMLA) </li>
+                                <li> Voter Registration </li>
+                            </ul>
+                        </div>
+                        <!-- <div class="dashboard__content__sidebar__item__menu__list">
+                            
+                        </div> -->
+                        
+        
+                    </div>
+                </li>
+
+                <li class="dashboard__content__sidebar__item"> 
                     <h3> Student Resources and Information </h3> <i class="fas fa-right-from-bracket"></i>
-                </div>
-
-                <div class="dashboard__content__sidebar__item"> 
-                    <h3> Jump to CUNYfirst</h3>  <i class="fas fa-school-flag"></i> 
-                </div>
+                </li>
     
-            </div>
+            </ul>
 
             <div class="dashboard__content__main">
-                <h2> Hi </h2>
-                <h1> Good morning, </h1>
+                <h2> Saturday November 2nd, 2024  </h2>
+                <h1> Good morning, Oswaldo, you have <span> CSC 211 </span> today at <span> F-1007 </span> with Professor 
+                <span> Jayaweera </span>. There's a <span> Blood Drive </span> at Chambers today between 12pm to 6pm. </h1>
+                <?xml version="1.0" encoding="UTF-8"?><svg width="48px" height="48px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#fcfcfc" stroke-width="1.5"><path d="M8 15C12.8747 15 15 12.949 15 8C15 12.949 17.1104 15 22 15C17.1104 15 15 17.1104 15 22C15 17.1104 12.8747 15 8 15Z" fill="#fcfcfc" stroke="#fcfcfc" stroke-width="1.5" stroke-linejoin="round"></path><path d="M2 6.5C5.13376 6.5 6.5 5.18153 6.5 2C6.5 5.18153 7.85669 6.5 11 6.5C7.85669 6.5 6.5 7.85669 6.5 11C6.5 7.85669 5.13376 6.5 2 6.5Z" fill="#fcfcfc" stroke="#fcfcfc" stroke-width="1.5" stroke-linejoin="round"></path></svg>
 
                 <div class="dashboard__content__main__map">
                     <img src="maps-b.jpg" alt="map">
@@ -93,78 +152,7 @@
         </div>
     </div>
 
-    <div class="card">
-        <div class="card__header">
-            <h2> Connect </h2>
-            <h1> Explore our Essential Student Resources </h1>
-            <p> Our platform is designed to enhance your college experience. Discover tools that simplify your academic journey and foster connections.</p>
-        </div>
-
-        
-    </div>
-
-    <div class="club card">
-        <div class="club__header">
-            <h2> Explore </h2>
-            <h1> Our Community Clubs </h1>
-            <p> Join our diverse clubs to enhance your academic journey and connect with fellow students. </p>
-        </div>
-
-        <div class="club__search">
-            <input type="text" id="clubSearchInput" placeholder="Search for a club">
-            <button type="button" onclick="searchClubs()">Search</button>
-        </div>
-        <div class="club__list">
-            <div class="club__list__dynamic"
-                data-sheetdb-url="https://sheetdb.io/api/v1/e36vimrfh30cg"
-                data-sheetdb-sort-by="club name"
-                data-sheetdb-sort-order="asc"
-                data-sheetdb-save="club-list-data">
-
-                <div class="club__list__dynamic__item">
-                    <div class="club__list__dynamic__header">
-                        <!-- CSS doesn't seem to apply -->
-                        <h1> {{Club Name}}  </h1> <span> &#x2022; {{Club Advisor Name}} <a href="mailto:{{Club Email}}"> <i class="fa fa-envelope"></i> </a> </span>
-                        <!-- <span> <a href="mailto:{{Club Email}}"> <i class="fa fa-envelope"></i> </a> </span> -->
-                        
-                        <!--
-                        <span class="zoom-link"> 
-                            <a href="{{Zoom Links}}"> <i class="fas fa-video"></i> </a> 
-                        </span>
-                        -->
-                       
-                    </div>
-                    <div class="club__list__dynamic__dynamic__description">
-                        {{Days/Time Club Meets}} at {{Club Room}}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script>
-            // 11/1 2:53pm 
-            // This function doesn't work, for some reason all url's return as {{Zoom Links}} 
-            // rather than the actual values they're supposed to represent.
-            document.addEventListener("DOMContentLoaded", function() {
-                // Select all zoom link spans
-                const zoomLinks = document.querySelectorAll(".club__list__dynamic__item .zoom-link a");
-
-                let invalidLink = 0;
-                zoomLinks.forEach(link => {
-                    // Check if the href attribute is empty, null, or contains "none"
-                    const url = link.getAttribute("href");
-                    console.log(url);
-                    if (!url || url.trim() === "" || url === "{{Zoom Links}}" || url === null) {
-                        invalidLink++; 
-                        console.log(link.parentElement.textContent);
-                        link.parentElement.style.display = "none"; // Hide the span if no Zoom link
-                    }
-                });
-
-                console.log(invalidLink);
-                console.log("End of function");
-            });
-        </script>
-    </div>
+   
 
     <footer class="footer"> 
         <div class="footer__nav">

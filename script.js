@@ -22,3 +22,17 @@ function changeTheme() {
     // Toggle the theme state
     darkTheme = !darkTheme;
 }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const jsEnabled = document.getElementById("js-enabled");
+    const jsHidden = document.getElementById("js-hidden");
+
+    jsEnabled.addEventListener("click", function() {
+        if (jsHidden.style.display === "none" || !jsHidden.style.display) {
+            jsHidden.style.display = "flex";
+        } else {
+            jsHidden.style.display = "none";
+        }
+    });
+});

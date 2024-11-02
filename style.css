@@ -319,14 +319,26 @@ button {
 .dashboard {
   display: flex;
   flex-flow: column nowrap;
-  border: 2px solid red;
+  height: 100vh;
 }
 .dashboard__header {
   display: flex;
-  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
   padding: 20px;
   background: var(--secondary-color);
   color: var(--primary-color);
+}
+.dashboard__header__search {
+  width: 20%;
+  border-radius: 12px;
+  height: 20%;
+}
+.dashboard__header__profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .dashboard__content {
   display: flex;
@@ -334,7 +346,10 @@ button {
 .dashboard__content__sidebar {
   display: flex;
   flex-flow: column nowrap;
-  width: 20%;
+  width: 40%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .dashboard__content__sidebar__item {
   background: var(--secondary-color);
@@ -347,15 +362,68 @@ button {
   background: darkblue;
   color: var(--primary-color);
 }
+.dashboard__content__sidebar__item__menu {
+  position: absolute;
+  left: 20.15%;
+  top: 49%;
+  background: darkblue;
+  padding: 20px;
+  z-index: 4;
+  width: 50%;
+  height: 70%;
+  display: flex;
+  flex-flow: row wrap;
+  overflow-y: scroll;
+}
+.dashboard__content__sidebar__item__menu__list {
+  width: 40%;
+  padding: 1em;
+}
+.dashboard__content__sidebar__item__menu__list ul li:hover {
+  text-decoration: underline;
+}
 .dashboard__content__sidebar__item--special {
-  background: orange;
+  background: orange !important;
   color: var(--primary-color);
 }
 .dashboard__content__main {
-  color: red;
+  padding: 1em;
+  display: flex;
+  flex-flow: column;
+}
+.dashboard__content__main__map {
+  height: 30%;
+  overflow-y: hidden;
 }
 .dashboard__content__main__map img {
   width: 100%;
+  filter: brightness(90%);
+}
+.dashboard__content__main__map img:hover {
+  filter: brightness(100%);
+}
+
+.generic-ai-btn {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+#clubSearchInput {
+  border-radius: 15px;
+  padding: 10px;
+  width: 500px;
+}
+
+.club__search button {
+  background: navy;
+  color: white;
+  padding: 1em;
+  border-radius: 15px;
+}
+
+#js-hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
